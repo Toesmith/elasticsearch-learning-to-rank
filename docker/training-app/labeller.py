@@ -18,7 +18,7 @@ class Labeller:
             "query": {
                 "multi_match": {
                     "query": "test",
-                    "fields": ["title", "overview"]
+                    "fields": ["name", "tags", "shoe_type"]
                 }
             }
         }
@@ -31,7 +31,7 @@ class Labeller:
         res = []
         for result in results['hits']['hits']:
             res.append({'name': result['_source']
-                        ['title'], 'id': result['_id']})
+                        ['name'], 'id': result['_id']})
 
         return json.dumps(res)
 

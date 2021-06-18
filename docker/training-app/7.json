@@ -1,0 +1,10 @@
+{
+    "query": {
+        "bool": {
+            "should": [
+                {"match": {"shoe_type": {"query": "{{keywords}}", "fuzziness": 1}}},
+            ]
+        }
+    }
+}
+
