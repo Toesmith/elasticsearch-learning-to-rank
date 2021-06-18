@@ -44,7 +44,7 @@ class Trainer:
                         modelOutput='model.txt', whichModel=modelType)
         print("Model Trained. creating models")
         self.saveModel(scriptName=ES_MODEL_NAME,
-                       featureSet='movie_features', modelFname='model.txt')
+                       featureSet=ES_FEATURE_SET_NAME, modelFname='model.txt')
 
         with open('/opt/services/flaskapp/src/training_log.txt') as flog:
             log_lines = flog.readlines()

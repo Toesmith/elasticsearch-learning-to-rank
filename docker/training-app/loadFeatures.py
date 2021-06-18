@@ -1,6 +1,6 @@
 import json
 import requests
-from utils import ES_AUTH, ES_HOST
+from utils import ES_AUTH, ES_HOST, ES_FEATURE_SET_NAME
 from urllib.parse import urljoin
 
 
@@ -24,7 +24,7 @@ def eachFeature():
         pass
 
 
-def loadFeatures(featureSetName='movie_features'):
+def loadFeatures(featureSetName=ES_FEATURE_SET_NAME):
     featureSet = {
         "featureset": {
             "name": featureSetName,

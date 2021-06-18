@@ -22,7 +22,7 @@ class Tester:
         baseQuery = {
           "query": {
               "multi_match": {
-                  "query": "test",
+                  "query": "cool",
                   "fields": ["name", "tags", "shoe_type"]
                }
            },
