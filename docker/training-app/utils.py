@@ -13,7 +13,7 @@ ES_TYPE = os.environ.get('ES_TYPE', 'products')
 ES_DATA = os.environ.get('ES_DATA', '/opt/services/flaskapp/tmdb.json')
 ES_FEATURE_SET_NAME = os.environ.get('ES_FEATURE_SET_NAME', 'product_features')
 ES_MODEL_NAME = os.environ.get('ES_MODEL_NAME', 'test_6')
-ES_MODEL_TYPE = os.environ.get('ES_MODEL_TYPE', '6')
+ES_MODEL_TYPE = os.environ.get('ES_MODEL_TYPE', '2')
 ES_METRIC_TYPE = os.environ.get('ES_METRIC_TYPE', 'ERR@10')
 
 if ES_USER is not None and ES_PASSWORD is not None:
