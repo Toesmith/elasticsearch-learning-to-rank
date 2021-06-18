@@ -1,5 +1,5 @@
 import json
-from utils import ES_FEATURE_SET_NAME
+from utils import ES_FEATURE_SET_NAME, ES_INDEX
 
 logQuery = {
     "size": 100,
@@ -56,7 +56,7 @@ def logFeatures(es, judgmentsByQid):
         logQuery['query']['bool']['should'][0]['sltr']['params']['keywords'] = keywords
         print("POST")
         print(json.dumps(logQuery, indent=2))
-        res = es.search(index=es, body=logQuery)
+        res = es.search(index=ES_INDEX, body=logQuery)
         # Add feature back to each judgment
         featuresPerDoc = {}
         for doc in res['hits']['hits']:
