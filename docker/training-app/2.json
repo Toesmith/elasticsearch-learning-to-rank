@@ -2,7 +2,7 @@
     "query": {
         "bool": {
             "should": [
-                {"match": {"name": {"query": "{{keywords}}", "fuzziness": 1}}},
+                {"match": {"name": {"query": "{{keywords}}", "fuzziness": 1}}}
             ]
         }
     }

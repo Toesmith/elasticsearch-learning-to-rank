@@ -2,9 +2,8 @@
     "query": {
         "bool": {
             "should": [
-                {"match": {"tags": {"query": "{{keywords}}", "fuzziness": 1}}},
+                {"match": {"tags": {"query": "{{keywords}}", "fuzziness": 1}}}
             ]
         }
     }
 }
-
