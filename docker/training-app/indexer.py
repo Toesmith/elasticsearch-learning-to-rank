@@ -39,7 +39,7 @@ class Indexer:
                 if 'title' in movie:
                     print("%s added to %s" % (movie['title'], index),file=sys.stderr)
 
-    def __reindex(self, es, analysisSettings={}, mappingSettings={}, movieDict={}, index='tmdb', es_type='movie'):
+    def __reindex(self, es, analysisSettings={}, mappingSettings={}, movieDict={}, index=ES_INDEX, es_type=ES_TYPE):
         import elasticsearch.helpers
         settings = {
             "settings": {

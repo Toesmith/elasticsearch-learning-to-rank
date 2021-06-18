@@ -56,7 +56,7 @@ def logFeatures(es, judgmentsByQid):
         logQuery['query']['bool']['should'][0]['sltr']['params']['keywords'] = keywords
         print("POST")
         print(json.dumps(logQuery, indent=2))
-        res = es.search(index='tmdb', body=logQuery)
+        res = es.search(index=ES, body=logQuery)
         # Add feature back to each judgment
         featuresPerDoc = {}
         for doc in res['hits']['hits']:

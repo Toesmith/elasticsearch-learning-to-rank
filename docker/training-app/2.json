@@ -1,8 +1,9 @@
 {
     "query": {
-        "match": {
-            "overview": "{{keywords}}"
+        "bool": {
+            "should": [
+                {"match": {"name": {"query": "{{keywords}}", "fuzziness": 1}}},
+            ]
         }
     }
 }
-

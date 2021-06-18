@@ -1,8 +1,12 @@
 {
     "query": {
-        "prefix": {
-            "title": "{{keywords}}"
+        "function_score": {
+            "functions": {
+                "field": "order_rate"
+            },
+            "query": {
+                "match_all": {}
+            }
         }
     }
 }
-

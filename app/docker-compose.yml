@@ -4,10 +4,15 @@ services:
     build: ../docker/elasticsearch
     container_name: elasticsearch
     environment:
+      - http.host=0.0.0.0
+      - transport.host=0.0.0.0
       - discovery.type=single-node
       - bootstrap.memory_lock=true
       - xpack.security.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - 9200:9200
+      - 9300:9300
     ulimits:
       memlock:
         soft: -1
@@ -25,8 +30,8 @@ services:
       - elasticsearch
     environment:
       - ES_HOST=http://elasticsearch:9200
-      - ES_INDEX=tmdb
-      - ES_TYPE=movie
+      - ES_INDEX=toesmith_products
+      - ES_TYPE=products
     volumes:
       - ../docker/training-app:/opt/services/flaskapp/src
 

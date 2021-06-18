@@ -1,7 +1,9 @@
 {
     "query": {
-        "match": {
-            "title": "{{keywords}}"
+        "bool": {
+            "should": [
+                {"match": {"tags": {"query": "{{keywords}}", "fuzziness": 1}}},
+            ]
         }
     }
 }

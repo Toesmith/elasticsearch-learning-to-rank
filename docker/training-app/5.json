@@ -2,7 +2,7 @@
     "query": {
         "function_score": {
             "functions": {
-                "field": "view_rate"
+                "field": "atc_rate"
             },
             "query": {
                 "match_all": {}
