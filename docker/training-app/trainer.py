@@ -42,6 +42,7 @@ class Trainer:
         print("*** Training %s " % modelType)
         self.trainModel(judgmentsWithFeaturesFile='sample_judgments_wfeatures.txt',
                         modelOutput='model.txt', whichModel=modelType)
+        print("Model Trained. creating models")
         self.saveModel(scriptName=ES_MODEL_NAME,
                        featureSet='movie_features', modelFname='model.txt')
 
@@ -87,9 +88,10 @@ class Trainer:
             head = {'Content-Type': 'application/json'}
             resp = requests.post(fullPath, data=json.dumps(
                 modelPayload), headers=head, auth=ES_AUTH)
+            print("model pushed to elasticsearch")
             print(resp.status_code)
-            if (resp.status_code >= 300):
-                print(resp.text)
+            # if (resp.status_code >= 300):
+            print(resp.text)
 
     def find_label_file(self):
         return [f for f in os.listdir("/opt/services/flaskapp/src/") if f.endswith("_judgments.txt")][0]
