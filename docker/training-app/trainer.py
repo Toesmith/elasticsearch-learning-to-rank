@@ -89,9 +89,10 @@ class Trainer:
             resp = requests.post(fullPath, data=json.dumps(
                 modelPayload), headers=head, auth=ES_AUTH)
             print("model pushed to elasticsearch")
+            print(modelPayload)
             print(resp.status_code)
-            # if (resp.status_code >= 300):
-            print(resp.text)
+            if (resp.status_code >= 300):
+                print(resp.text)
 
     def find_label_file(self):
         return [f for f in os.listdir("/opt/services/flaskapp/src/") if f.endswith("_judgments.txt")][0]
